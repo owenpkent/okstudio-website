@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKStudio - Professional Aerial Solutions</title>
+    <meta name="description" content="Professional drone services for aerial photography, videography, mapping, and inspections. Expert pilots delivering stunning results.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-drone"></i>
+                <span>OKStudio</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Video Background -->
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="drone-flying-with-cinema-camera-in-skatepark-SBV-315018033-HD.mp4" type="video/mp4">
+                <!-- Fallback for browsers that don't support video -->
+                <div class="hero-video-fallback"></div>
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">Elevate Your Vision</span>
+                <br>With Professional Drone Solutions
+            </h1>
+            <p class="hero-subtitle">Capturing stunning aerial perspectives for real estate, events, inspections, and creative projects</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get Quote</a>
+                <a href="#portfolio" class="btn btn-secondary">View Work</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="drone-animation">
+                <i class="fas fa-drone drone-icon"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Aerial Photography</h3>
+                    <p>High-resolution aerial photography for real estate, events, and marketing materials</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Aerial Videography</h3>
+                    <p>Cinematic drone footage for commercials, events, and promotional content</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Mapping & Surveying</h3>
+                    <p>Precision mapping and surveying for construction, agriculture, and land development</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Inspections</h3>
+                    <p>Comprehensive inspections for infrastructure, solar panels, and industrial facilities</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Event Coverage</h3>
+                    <p>Dynamic aerial coverage for weddings, sports events, and special occasions</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <p>Advanced data processing and analysis for business insights and reporting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Our Portfolio</h2>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="real-estate">Real Estate</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="inspections">Inspections</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="real-estate">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Home Aerial View">
+                        <div class="portfolio-overlay">
+                            <h3>Luxury Home Photography</h3>
+                            <p>Stunning aerial views for premium real estate listings</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="events">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding Aerial Coverage">
+                        <div class="portfolio-overlay">
+                            <h3>Wedding Aerial Coverage</h3>
+                            <p>Beautiful moments captured from above</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="commercial">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Commercial Building">
+                        <div class="portfolio-overlay">
+                            <h3>Commercial Property</h3>
+                            <p>Professional aerial photography for businesses</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="inspections">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Solar Panel Inspection">
+                        <div class="portfolio-overlay">
+                            <h3>Solar Panel Inspection</h3>
+                            <p>Detailed thermal imaging and analysis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="real-estate">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Residential Development">
+                        <div class="portfolio-overlay">
+                            <h3>Residential Development</h3>
+                            <p>Progress tracking and marketing materials</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="events">
+                    <div class="portfolio-image">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sports Event">
+                        <div class="portfolio-overlay">
+                            <h3>Sports Event Coverage</h3>
+                            <p>Dynamic action shots from above</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About OKStudio</h2>
+                    <p>We are a team of certified drone pilots and aerial photography experts, dedicated to capturing stunning perspectives that tell your story from above. With years of experience and state-of-the-art equipment, we deliver professional results for every project.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Satisfaction Rate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Drone Pilot at Work">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ready to Elevate Your Project?</h3>
+                    <p>Let's discuss how we can capture your vision from above. Contact us for a free consultation and quote.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@okstudio.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Denver, CO</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="">Select Service</option>
+                            <option value="aerial-photography">Aerial Photography</option>
+                            <option value="aerial-videography">Aerial Videography</option>
+                            <option value="mapping-surveying">Mapping & Surveying</option>
+                            <option value="inspections">Inspections</option>
+                            <option value="event-coverage">Event Coverage</option>
+                            <option value="data-analysis">Data Analysis</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-drone"></i>
+                        <span>OKStudio</span>
+                    </div>
+                    <p>Professional aerial solutions for every project</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Aerial Photography</a></li>
+                        <li><a href="#services">Aerial Videography</a></li>
+                        <li><a href="#services">Mapping & Surveying</a></li>
+                        <li><a href="#services">Inspections</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@okstudio.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Denver, CO</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 OKStudio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
