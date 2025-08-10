@@ -702,7 +702,7 @@ body {
 }
 
 .cert-logo {
-    height: 60px;
+    height: 100px;
     width: auto;
     opacity: 0.8;
     transition: opacity 0.3s ease;
