@@ -1,3 +1,30 @@
+// Initialize Vanta.js Clouds Effect
+let vantaEffect;
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Vanta Clouds
+    vantaEffect = VANTA.CLOUDS({
+        el: "#vanta-background",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        skyColor: 0x68b8d7,
+        cloudColor: 0xadc1de,
+        cloudShadowColor: 0x183550,
+        sunColor: 0xff9919,
+        sunGlareColor: 0xff6633,
+        sunlightColor: 0xff9933,
+        speed: 1.20
+    });
+});
+
+// Clean up Vanta effect when needed
+window.addEventListener('beforeunload', function() {
+    if (vantaEffect) vantaEffect.destroy();
+});
+
 // Dark Mode Toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 const htmlElement = document.documentElement;
