@@ -728,6 +728,15 @@ body {
     justify-items: center;
 }
 
+.certifications-section {
+    text-align: center;
+}
+
+.certifications-section h4 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
 .footer-logo {
     display: flex;
     align-items: center;
@@ -776,20 +785,18 @@ body {
 }
 
 .social-links a {
-    width: 60px;
-    height: 60px;
-    background: var(--border-color);
-    border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-primary);
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
     text-decoration: none;
+    font-size: 2rem;
     transition: all 0.3s ease;
-    font-size: 1.5rem;
-}
-
-.social-links a:hover {
+    margin: 0 0.5rem;
     background: var(--accent-color);
     transform: translateY(-2px);
 }
