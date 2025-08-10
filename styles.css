@@ -247,11 +247,8 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #3b82f6, #1e40af);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+    color: #3b82f6;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
 }
 
 .hero-subtitle {
@@ -572,7 +569,28 @@ body {
 /* Contact Section */
 .contact {
     padding: 6rem 0;
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
+    position: relative;
+    background-image: url('images/blue-convertible-car-driving-on-scenic-road-by-west-coast-on-oahu-island-aerial-view-s-SBI-350033296.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 1;
+}
+
+.contact .container {
+    position: relative;
+    z-index: 2;
 }
 
 .contact-content {
