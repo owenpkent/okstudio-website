@@ -620,10 +620,11 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
     margin-bottom: 2rem;
     align-items: start;
+    justify-items: center;
 }
 
 .footer-logo {
