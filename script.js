@@ -101,7 +101,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Contact form handling
+// Contact form handling for Netlify Forms
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -110,27 +110,28 @@ if (contactForm) {
         // Get form data
         const formData = new FormData(this);
         const name = formData.get('name');
-        const email = formData.get('email');
-        const phone = formData.get('phone');
-        const service = formData.get('service');
         const message = formData.get('message');
         
         // Basic validation
-        if (!name || !email || !service || !message) {
+        if (!name || !message) {
             showNotification('Please fill in all required fields.', 'error');
             return;
         }
         
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showNotification('Please enter a valid email address.', 'error');
-            return;
-        }
-        
-        // Simulate form submission
-        showNotification('Thank you! Your message has been sent. We\'ll get back to you soon.', 'success');
-        this.reset();
+        // Submit to Netlify
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            showNotification('Thank you! Your message has been sent. We\'ll get back to you soon.', 'success');
+            this.reset();
+        })
+        .catch((error) => {
+            showNotification('Sorry, there was an error sending your message. Please try again.', 'error');
+            console.error('Form submission error:', error);
+        });
     });
 }
 
@@ -373,6 +374,15 @@ if (heroVideo) {
         }
     });
 }
+
+// Update footer year automatically to the current year
+document.addEventListener("DOMContentLoaded", function () {
+    const yearElement = document.getElementById("year");
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+});
+  
 
 // Service worker registration for PWA capabilities (optional)
 if ('serviceWorker' in navigator) {

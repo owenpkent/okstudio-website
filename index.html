@@ -155,39 +155,14 @@
                     <p>Let's discuss how we can capture your vision from above. Contact us for a free consultation and quote.</p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>(555) 123-4567</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>info@okstudio.com</span>
-                        </div>
-                        <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Denver, CO</span>
+                            <span>Loveland, CO</span>
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" name="contact" method="POST" data-netlify="true">
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder="Your Phone">
-                    </div>
-                    <div class="form-group">
-                        <select id="service" name="service" required>
-                            <option value="">Select Service</option>
-                            <option value="aerial-photography">Aerial Photography</option>
-                            <option value="aerial-videography">Aerial Videography</option>
-                            <option value="mapping-surveying">Mapping & Surveying</option>
-                            <option value="inspections">Inspections</option>
-                            <option value="event-coverage">Event Coverage</option>
-                            <option value="data-analysis">Data Analysis</option>
-                        </select>
                     </div>
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
@@ -223,7 +198,7 @@
                     <ul>
                         <li><i class="fas fa-phone"></i> (555) 123-4567</li>
                         <li><i class="fas fa-envelope"></i> info@okstudio.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Denver, CO</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Loveland, CO</li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -237,8 +212,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 OKStudio. All rights reserved.</p>
-            </div>
+                <p>&copy; <span id="year"></span> OKStudio. All rights reserved.</p>
+              </div>
+              
         </div>
     </footer>
 
