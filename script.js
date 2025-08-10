@@ -379,10 +379,32 @@ if (heroVideo) {
 document.addEventListener("DOMContentLoaded", function () {
     const yearElement = document.getElementById("year");
     if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Live Time Display
+        function updateLiveTime() {
+            const now = new Date();
+            const options = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false,
+                timeZoneName: 'short'
+            };
+            
+            const timeString = now.toLocaleTimeString('en-US', options);
+            const liveTimeElement = document.getElementById('liveTime');
+            if (liveTimeElement) {
+                liveTimeElement.textContent = timeString;
+            }
+        }
+
+        // Update time immediately and then every second
+        updateLiveTime();
+        setInterval(updateLiveTime, 1000);
     }
 });
-  
 
 // Service worker registration for PWA capabilities (optional)
 if ('serviceWorker' in navigator) {
