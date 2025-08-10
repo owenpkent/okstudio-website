@@ -251,7 +251,7 @@ body {
 }
 
 .gradient-text {
-    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    background: linear-gradient(45deg, #60a5fa, #3b82f6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -282,13 +282,14 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #ffd700, #ffed4e);
-    color: var(--text-primary);
+    background: linear-gradient(45deg, #2563eb, #3b82f6);
+    color: white;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+    background: linear-gradient(45deg, #1d4ed8, #2563eb);
 }
 
 .btn-secondary {
@@ -389,6 +390,7 @@ body {
     color: var(--text-secondary);
     line-height: 1.6;
 }
+
 
 /* Portfolio Section */
 .portfolio {
