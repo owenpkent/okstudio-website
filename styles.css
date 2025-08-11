@@ -556,8 +556,33 @@ body {
 
 /* About Section */
 .about {
-    padding: 5rem 0;
+    padding: 6rem 0;
     background: var(--bg-secondary);
+    position: relative;
+    background-image: url('images/winter-drone-shot-of-ski-pistes-and-slopes-covered-with-fresh-powder-snow-in-tignes-in-SBI-349992395.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 1;
+}
+
+[data-theme="dark"] .about::before {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.about .container {
+    position: relative;
+    z-index: 2;
 }
 
 .about-content {
