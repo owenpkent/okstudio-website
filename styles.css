@@ -982,7 +982,8 @@ body {
     
     .cert-logo {
         height: 70px;
-        max-width: 70px;
+        width: auto;
+        max-width: none;
     }
     
     .social-links a {
@@ -1035,7 +1036,8 @@ body {
     
     .cert-logo {
         height: 50px;
-        max-width: 50px;
+        width: auto;
+        max-width: none;
     }
     
     .footer-content {
