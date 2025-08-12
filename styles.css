@@ -49,6 +49,8 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -58,6 +60,7 @@ body {
     background-color: var(--bg-primary);
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
+    max-width: 100vw;
 }
 
 .container {
@@ -836,7 +839,8 @@ body {
 
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
+    justify-content: center;
 }
 
 .social-links a {
@@ -851,7 +855,7 @@ body {
     text-decoration: none;
     font-size: 2rem;
     transition: all 0.3s ease;
-    margin: 0 0.5rem;
+    margin: 0;
     background: var(--accent-color);
     transform: translateY(-2px);
 }
@@ -886,7 +890,14 @@ body {
 @media (max-width: 768px) {
     .nav-controls {
         order: -1;
-        margin-right: 1rem;
+        margin-right: 0.5rem;
+    }
+    
+    .live-time {
+        min-width: 80px;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        margin-right: 0.5rem;
     }
     
     .nav-menu {
@@ -958,6 +969,28 @@ body {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .certification-logos {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .cert-logo {
+        height: 70px;
+        max-width: 70px;
+    }
+    
+    .social-links a {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin: 0 0.25rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -981,6 +1014,36 @@ body {
     .filter-btn {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
+    }
+    
+    .live-time {
+        min-width: 60px;
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+        margin-right: 0.3rem;
+    }
+    
+    .social-links {
+        gap: 0.25rem;
+    }
+    
+    .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .cert-logo {
+        height: 50px;
+        max-width: 50px;
+    }
+    
+    .footer-content {
+        padding: 0 10px;
+    }
+    
+    .container {
+        padding: 0 15px;
     }
 }
 
