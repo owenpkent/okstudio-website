@@ -943,6 +943,9 @@ body {
         max-width: 100%;
         width: 100%;
         box-sizing: border-box;
+        justify-items: center;
+        align-items: center;
+        margin: 0 auto;
     }
     
     .hero-content h1 {
@@ -1033,6 +1036,9 @@ body {
         max-width: 100%;
         width: 100%;
         box-sizing: border-box;
+        justify-items: center;
+        align-items: center;
+        margin: 0 auto;
     }
 
     .section-title {
