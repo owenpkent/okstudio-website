@@ -939,13 +939,19 @@ body {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
-        padding: 0 1.5rem;
+        padding: 0 20px;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .hero-content h1 {
-        font-size: 2.5rem;
-        line-height: 1.2;
-        padding: 0 0.5rem;
+        font-size: 2.2rem;
+        line-height: 1.1;
+        padding: 0;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
     .hero-visual {
@@ -1004,18 +1010,29 @@ body {
 
 @media (max-width: 480px) {
     .hero-content h1 {
-        font-size: 1.8rem;
-        line-height: 1.2;
+        font-size: 1.6rem;
+        line-height: 1.1;
         margin-bottom: 1rem;
-        padding: 0 1rem;
+        padding: 0;
         text-align: center;
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .hero {
+        padding: 0;
+        overflow-x: hidden;
     }
     
     .hero-content {
         grid-template-columns: 1fr;
         gap: 2rem;
-        padding: 0 1rem;
+        padding: 0 20px;
         text-align: center;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .section-title {
