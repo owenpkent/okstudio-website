@@ -903,53 +903,68 @@ body {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--card-bg);
+        top: 80px;
         width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px var(--shadow-color);
-        padding: 2rem 0;
+        height: calc(100vh - 80px);
+        background: var(--bg-primary);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: left 0.3s ease;
+        padding-top: 2rem;
+        z-index: 1000;
     }
 
     .nav-menu.active {
         left: 0;
     }
 
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+
     .hamburger {
         display: flex;
     }
 
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--text-primary);
+        margin: 3px 0;
+        transition: 0.3s;
     }
 
     .hero-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
         text-align: center;
+        padding: 0 1.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        padding: 0 0.5rem;
+    }
+
+    .hero-visual {
+        order: -1;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        text-align: center;
     }
 
     .contact-content {
@@ -957,27 +972,21 @@ body {
         gap: 2rem;
     }
 
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-stats {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+        text-align: center;
     }
     
-    .certification-logos {
-        flex-wrap: wrap;
-        gap: 1rem;
+    .live-time {
+        min-width: 80px;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        margin-right: 0.5rem;
+    }
+    
+    .nav-controls {
+        margin-left: 0.5rem;
     }
     
     .cert-logo {
@@ -990,13 +999,23 @@ body {
         width: 50px;
         height: 50px;
         font-size: 1.5rem;
-        margin: 0 0.25rem;
     }
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
+    .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+        text-align: center;
     }
 
     .section-title {
