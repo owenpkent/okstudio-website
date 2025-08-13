@@ -936,16 +936,21 @@ body {
     }
 
     .hero-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         padding: 0 20px;
         max-width: 100%;
         width: 100%;
         box-sizing: border-box;
-        justify-items: center;
-        align-items: center;
         margin: 0 auto;
+        gap: 2rem;
+    }
+    
+    .hero-visual {
+        display: none;
     }
     
     .hero-content h1 {
@@ -1029,16 +1034,17 @@ body {
     }
     
     .hero-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+        padding: 0 20px;
         max-width: 100%;
         width: 100%;
         box-sizing: border-box;
-        justify-items: center;
-        align-items: center;
         margin: 0 auto;
+        gap: 2rem;
     }
 
     .section-title {
