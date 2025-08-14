@@ -390,13 +390,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 minute: '2-digit',
                 second: '2-digit',
                 hour12: false,
-                timeZoneName: 'short'
+                timeZone: 'America/Denver'
             };
             
             const timeString = now.toLocaleTimeString('en-US', options);
+            const timeZone = 'MDT'; // Fixed timezone abbreviation
+            const fullTimeString = `${timeString} ${timeZone}`;
+            
             const liveTimeElement = document.getElementById('liveTime');
             if (liveTimeElement) {
-                liveTimeElement.textContent = timeString;
+                liveTimeElement.textContent = fullTimeString;
             }
         }
 
