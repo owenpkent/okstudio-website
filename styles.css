@@ -1164,6 +1164,25 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #333333;
+}
+
+[data-theme="dark"] #services.services .service-card {
+    background: rgba(30, 30, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+[data-theme="dark"] #services.services .service-card h3 {
+    color: #ffffff;
+}
+
+[data-theme="dark"] #services.services .service-card p {
+    color: #cccccc;
+}
+
+[data-theme="dark"] #services.services .service-features li {
+    color: #cccccc;
 }
 
 .services-cta {
