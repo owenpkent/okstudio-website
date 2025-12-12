@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - OkStudio Aerial Solutions</title>
-    <meta name="description" content="Professional drone services including emergency response, real estate photography, cinematic event coverage, and aerial inspections.">
+    <title>Services - OKStudio</title>
+    <meta name="description" content="Accessibility-first software services: assistive technology, accessibility audits, interaction design, automation, and custom builds.">
     <link rel="icon" type="image/png" href="images/okstudio favicon drone 1.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html#home" class="nav-brand">
+            <a href="index.html" class="nav-brand">
                 <img src="images/okstudio favicon drone 1.png" alt="OKStudio" class="nav-favicon">
                 <span>OKStudio</span>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html#home" class="nav-link">Home</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#work" class="nav-link">Work</a></li>
                 <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-controls">
@@ -30,19 +32,21 @@
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
-            <div class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
+
+    <main id="main">
 
     <!-- Services Hero Section -->
     <section class="services-hero">
         <div class="services-hero-content">
-            <h1 class="services-hero-title">Our Services</h1>
-            <p class="services-hero-subtitle">Professional aerial solutions tailored to your specific needs</p>
+            <h1 class="services-hero-title">Services</h1>
+            <p class="services-hero-subtitle">Accessibility-first software, assistive technology, and modern product engineering.</p>
         </div>
     </section>
 
@@ -52,85 +56,85 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-universal-access"></i>
                     </div>
-                    <h3>Emergency Response & Disaster</h3>
-                    <p>Critical aerial support for firefighters, search & rescue, and disaster assessment operations</p>
+                    <h3>Accessibility Audits + Remediation</h3>
+                    <p>Practical, engineering-focused accessibility improvements for web and product experiences.</p>
                     <ul class="service-features">
-                        <li>Real-time aerial reconnaissance</li>
-                        <li>Thermal imaging capabilities</li>
-                        <li>Search and rescue support</li>
-                        <li>Disaster damage assessment</li>
+                        <li>WCAG-oriented reviews</li>
+                        <li>Keyboard + focus fixes</li>
+                        <li>Color/contrast improvements</li>
+                        <li>ARIA and semantic HTML guidance</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-code"></i>
                     </div>
-                    <h3>Real Estate Photography</h3>
-                    <p>Stunning aerial photography and videography to showcase properties from unique perspectives</p>
+                    <h3>Custom Software Development</h3>
+                    <p>Modern, maintainable builds—from prototypes to production—with clean UX and strong foundations.</p>
                     <ul class="service-features">
-                        <li>High-resolution aerial photos</li>
-                        <li>4K video walkthroughs</li>
-                        <li>Property boundary mapping</li>
-                        <li>Neighborhood context shots</li>
+                        <li>Product MVPs</li>
+                        <li>Front-end and interaction engineering</li>
+                        <li>UI systems and design tokens</li>
+                        <li>Performance and reliability</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-film"></i>
+                        <i class="fas fa-hand-paper"></i>
                     </div>
-                    <h3>Cinematic Event Coverage</h3>
-                    <p>Professional aerial cinematography for weddings, corporate events, and special occasions</p>
+                    <h3>Assistive Tech Prototyping</h3>
+                    <p>Interaction-driven tools that expand access to computing, creativity, and play.</p>
                     <ul class="service-features">
-                        <li>Cinematic aerial footage</li>
-                        <li>Multi-angle coverage</li>
-                        <li>Professional editing</li>
-                        <li>Same-day highlights</li>
+                        <li>Alternative input concepts</li>
+                        <li>Adaptive gaming workflows</li>
+                        <li>Hardware + software integration support</li>
+                        <li>User testing and iteration</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-microphone"></i>
                     </div>
-                    <h3>Aerial Inspections</h3>
-                    <p>Safe and efficient inspections of hard-to-reach structures and infrastructure</p>
+                    <h3>Automation + Voice Workflows</h3>
+                    <p>Speed up creative and professional workflows with automation and voice-driven control.</p>
                     <ul class="service-features">
-                        <li>Roof and building inspections</li>
-                        <li>Infrastructure monitoring</li>
-                        <li>Solar panel assessments</li>
-                        <li>Detailed inspection reports</li>
+                        <li>Voice-triggered macro systems</li>
+                        <li>App integration and scripting</li>
+                        <li>Tooling for creators</li>
+                        <li>Clear configuration for teams</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-map"></i>
+                        <i class="fas fa-mouse-pointer"></i>
                     </div>
-                    <h3>Mapping & Surveying</h3>
-                    <p>Precision aerial mapping and surveying services for construction and land development</p>
+                    <h3>Interaction Design + HCI</h3>
+                    <p>Make complex tools feel intuitive—especially for mouse-first and alternative-input users.</p>
                     <ul class="service-features">
-                        <li>Topographic mapping</li>
-                        <li>3D modeling</li>
-                        <li>Progress monitoring</li>
-                        <li>Volume calculations</li>
+                        <li>UX strategy and flows</li>
+                        <li>Accessible interaction patterns</li>
+                        <li>Prototyping and rapid iteration</li>
+                        <li>Usability testing</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-camera"></i>
+                        <i class="fas fa-music"></i>
                     </div>
-                    <h3>Creative Projects</h3>
-                    <p>Artistic aerial photography and videography for marketing, advertising, and creative content</p>
+                    <h3>Creative + Accessible Tools</h3>
+                    <p>Build software for making—music, video, writing—with accessibility and delight.</p>
                     <ul class="service-features">
-                        <li>Marketing content creation</li>
-                        <li>Advertising campaigns</li>
-                        <li>Social media content</li>
-                        <li>Artistic photography</li>
+                        <li>Audio/MIDI workflows</li>
+                        <li>Creator-focused UIs</li>
+                        <li>Automation for editing apps</li>
+                        <li>Accessibility baked in, not bolted on</li>
                     </ul>
                 </div>
             </div>
@@ -141,9 +145,9 @@
     <section class="services-cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Elevate Your Project?</h2>
-                <p>Contact us today to discuss your aerial photography and videography needs</p>
-                <a href="index.html#contact" class="btn btn-primary">Get Quote</a>
+                <h2>Have an accessibility-heavy idea?</h2>
+                <p>Let's talk through scope, constraints, and how we can ship something genuinely usable.</p>
+                <a href="index.html#contact" class="btn btn-primary">Contact</a>
             </div>
         </div>
     </section>
@@ -152,18 +156,19 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section certifications-section">
-                    <h4>Certifications</h4>
-                    <div class="certification-logos">
-                        <img src="images/UAS 2.png" alt="UAS Certification" class="cert-logo">
-                        <img src="images/41ZMmdQDdlL._UF894,1000_QL80_.png?v=2" alt="FAA Certification" class="cert-logo">
-                        <img src="images/International_amateur_radio_symbol.svg.png" alt="Ham Radio Certification" class="cert-logo">
-                    </div>
+                <div class="footer-section">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="https://github.com/owenpkent/Project-Nimbus" target="_blank" rel="noopener noreferrer">Project Nimbus</a></li>
+                        <li><a href="https://github.com/owenpkent/Octavium" target="_blank" rel="noopener noreferrer">Octavium</a></li>
+                        <li><a href="https://github.com/owenpkent/MacroVox" target="_blank" rel="noopener noreferrer">MacroVox</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Follow Us</h4>
+                    <h4>Connect</h4>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/owenpkent/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/owenpkent" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/owenpkent/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -172,6 +177,8 @@
             </div>
         </div>
     </footer>
+
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>

@@ -2,22 +2,26 @@
 let vantaEffect;
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Vanta Clouds
-    vantaEffect = VANTA.CLOUDS({
-        el: "#vanta-background",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        skyColor: 0x68b8d7,
-        cloudColor: 0xadc1de,
-        cloudShadowColor: 0x183550,
-        sunColor: 0xff9919,
-        sunGlareColor: 0xff6633,
-        sunlightColor: 0xff9933,
-        speed: 1.20
-    });
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const vantaContainer = document.querySelector('#vanta-background');
+
+    if (!prefersReducedMotion && window.VANTA && vantaContainer) {
+        vantaEffect = VANTA.CLOUDS({
+            el: vantaContainer,
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            skyColor: 0x68b8d7,
+            cloudColor: 0xadc1de,
+            cloudShadowColor: 0x183550,
+            sunColor: 0xff9919,
+            sunGlareColor: 0xff6633,
+            sunlightColor: 0xff9933,
+            speed: 1.20
+        });
+    }
 });
 
 // Clean up Vanta effect when needed
@@ -61,18 +65,27 @@ darkModeToggle.addEventListener('click', () => {
 });
 
 // Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const hamburger = document.getElementById('hamburger') || document.querySelector('.hamburger');
+const navMenu = document.getElementById('navMenu') || document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+function setMenuState(isOpen) {
+    if (!hamburger || !navMenu) return;
+    hamburger.classList.toggle('active', isOpen);
+    navMenu.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+}
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        const isOpen = navMenu.classList.contains('active');
+        setMenuState(!isOpen);
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
+    setMenuState(false);
 }));
 
 
@@ -252,7 +265,12 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .stat');
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        return;
+    }
+
+    const animatedElements = document.querySelectorAll('.service-card, .portfolio-item, .stat, .card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -295,16 +313,6 @@ document.querySelectorAll('.stat').forEach(stat => {
     statsObserver.observe(stat);
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const rate = scrolled * -0.5;
-        hero.style.transform = `translateY(${rate}px)`;
-    }
-});
-
 // Portfolio item click handler for lightbox (optional)
 document.querySelectorAll('.portfolio-item').forEach(item => {
     item.addEventListener('click', () => {
@@ -331,8 +339,7 @@ window.addEventListener('load', () => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         // Close mobile menu
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        setMenuState(false);
         
         // Close any open notifications
         const notifications = document.querySelectorAll('.notification');

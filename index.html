@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OKStudio - Aerial Solutions</title>
-    <meta name="description" content="Professional drone services for aerial photography, videography, mapping, and inspections.">
+    <title>OKStudio - Accessibility-First Software Studio</title>
+    <meta name="description" content="OKStudio is a boutique software development firm focused on assistive technology, accessibility, gaming, and human-computer interaction.">
     <link rel="icon" type="image/png" href="images/okstudio favicon drone 1.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,17 +14,19 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-brand">
+            <a href="index.html" class="nav-brand">
                 <img src="images/okstudio favicon drone 1.png" alt="OKStudio" class="nav-favicon">
                 <span>OKStudio</span>
             </a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#work" class="nav-link">Work</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="nav-controls">
@@ -33,34 +35,72 @@
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
-            <div class="hamburger">
+            <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-controls="navMenu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
+    <main id="main">
     <!-- Hero Section -->
     <section id="home" class="hero">
         <!-- Vanta.js Background -->
         <div id="vanta-background" class="vanta-container"></div>
         <div class="hero-overlay"></div>
-        
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="gradient-text">Elevate your vision</span>
-                <br>with aerial solutions
+                <span class="gradient-text">Accessibility-first</span>
+                <br>software that feels effortless
             </h1>
-            <p class="hero-subtitle">Capturing stunning aerial perspectives for real estate, events, inspections, and creative projects.</p>
+            <p class="hero-subtitle">We build assistive technology, automation, and interaction-driven software with modern UX and real-world accessibility at the core.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Get Quote</a>
-                <a href="#about" class="btn btn-secondary">Learn More</a>
+                <a href="#work" class="btn btn-primary">View Work</a>
+                <a href="#contact" class="btn btn-secondary">Contact</a>
             </div>
         </div>
         <div class="hero-visual">
-            <div class="drone-animation">
-                <i class="fas fa-drone drone-icon"></i>
+            <div class="drone-animation" aria-hidden="true">
+                <i class="fas fa-universal-access drone-icon"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="section work">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">Tools and products at the intersection of accessibility, engineering, and human-computer interaction.</p>
+            </div>
+
+            <div class="cards-grid">
+                <article class="card project-card">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-gamepad"></i></div>
+                    <h3>Project Nimbus</h3>
+                    <p>Accessibility-focused virtual controller that turns mouse input into virtual joystick commands for adaptive gaming and alternative control schemes.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-secondary btn-small" href="https://github.com/owenpkent/Project-Nimbus" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-music"></i></div>
+                    <h3>Octavium</h3>
+                    <p>An accessibility-first, mouse-driven virtual MIDI keyboard for making music without a physical keyboard.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-secondary btn-small" href="https://github.com/owenpkent/Octavium" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </article>
+
+                <article class="card project-card">
+                    <div class="card-icon" aria-hidden="true"><i class="fas fa-microphone"></i></div>
+                    <h3>MacroVox</h3>
+                    <p>Voice-controlled macro executor for Windows. Speak commands and execute keystrokes via AutoHotkey.</p>
+                    <div class="card-actions">
+                        <a class="btn btn-secondary btn-small" href="https://github.com/owenpkent/MacroVox" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -74,7 +114,8 @@
                 </div>
                 <div class="about-text">
                     <h2 class="section-title">About OKStudio</h2>
-                    <p>OKStudio was founded by Owen Kent, a drone pilot with over seven years of experience who uses aerial technology to overcome the limitations of his wheelchair and explore the world from new perspectives. A graduate of the film school at UC Berkeley, Owen combines his cinematic eye with technical expertise to create breathtaking aerial visuals. Proficient in both DJI and ArduPilot systems, he has a passion for photogrammetry, mapping, and cinematic aerial videography. Owen leads a team of certified drone pilots and aerial photography experts dedicated to capturing stunning perspectives that tell your story from above. With state-of-the-art equipment and the expertise to handle any mission, no project is too big or too small for OKStudio to deliver exceptional results.</p>
+                    <p>OKStudio is founded by Owen Kent, a builder working at the intersection of accessibility, engineering, and media. The studio focuses on assistive technology, accessibility-first software, and interaction design—building tools that expand what people can do with computers, games, and creative software.</p>
+                    <p>From adaptive input systems to voice-driven automation and musical interfaces, OKStudio blends clean engineering, modern UX, and practical accessibility into products that are fast, usable, and genuinely empowering.</p>
 
                 </div>
             </div>
@@ -88,8 +129,8 @@
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Ready to Elevate Your Project?</h3>
-                    <p>Let's discuss how we can capture your vision from above. Contact us for a free consultation and quote.</p>
+                    <h3>Let’s build something accessible</h3>
+                    <p>If you’re working on an assistive tech product, need accessibility help, or want a modern custom build, send a note. We’ll reply with next steps and scheduling options.</p>
                 </div>
                 <form class="contact-form" name="contact" method="POST" action="/contact" data-netlify="true" data-netlify-honeypot="bot-field" netlify-success="/success.html">
                     <input type="hidden" name="form-name" value="contact">
@@ -115,28 +156,30 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section certifications-section">
-                    <h4>Certifications</h4>
-                    <div class="certification-logos">
-                        <img src="images/UAS 2.png" alt="UAS Certification" class="cert-logo">
-                        <img src="images/41ZMmdQDdlL._UF894,1000_QL80_.png?v=2" alt="FAA Certification" class="cert-logo">
-                        <img src="images/International_amateur_radio_symbol.svg.png" alt="Ham Radio Certification" class="cert-logo">
-                    </div>
+                <div class="footer-section">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="https://github.com/owenpkent/Project-Nimbus" target="_blank" rel="noopener noreferrer">Project Nimbus</a></li>
+                        <li><a href="https://github.com/owenpkent/Octavium" target="_blank" rel="noopener noreferrer">Octavium</a></li>
+                        <li><a href="https://github.com/owenpkent/MacroVox" target="_blank" rel="noopener noreferrer">MacroVox</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Follow Us</h4>
+                    <h4>Connect</h4>
                     <div class="social-links">
+                        <a href="https://github.com/owenpkent" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/owenpkent/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; <span id="year"></span> OKStudio. All rights reserved.</p>
-              </div>
-              
+            </div>
         </div>
     </footer>
 
+    </main>
+
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
