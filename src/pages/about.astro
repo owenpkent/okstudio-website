@@ -63,7 +63,7 @@ import Base from '../layouts/Base.astro';
           <ul>
             <li><strong>Alpha-OSK</strong>: AI-powered on-screen keyboard for Windows and Linux. Shipping.</li>
             <li><strong>MacroVox</strong>: voice dictation for Windows. Coming soon.</li>
-            <li><strong>Project Nimbus</strong>: mouse-to-virtual-joystick controller for adaptive gaming. Coming soon.</li>
+            <li><strong>Nimbus</strong>: mouse-to-virtual-joystick controller for adaptive gaming. Coming soon.</li>
           </ul>
 
           <h2>Get involved</h2>
@@ -154,15 +154,15 @@ import Base from '../layouts/Base.astro';
     margin: 2.5rem 0 1rem;
     color: var(--text);
     letter-spacing: -0.02em;
-    position: relative;
-    padding-left: 1rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6em;
   }
   .prose h2::before {
     content: '//';
-    position: absolute;
-    left: 0;
     color: var(--neon-cyan);
     font-weight: 400;
+    flex-shrink: 0;
   }
   .prose h2:first-child { margin-top: 0; }
   .prose p { color: var(--text-muted); line-height: 1.75; }

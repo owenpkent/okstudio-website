@@ -1,5 +1,5 @@
 ---
-title: Project Nimbus
+title: Nimbus
 tagline: Mouse becomes joystick. Any game, any sim.
 status: coming-soon
 tier: featured

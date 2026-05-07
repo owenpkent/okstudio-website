@@ -68,7 +68,9 @@ const jsonLd = {
 
         <div class="product-hero__meta">
           <span class="meta-chip">{data.category}</span>
-          <span class="meta-chip meta-chip--pricing">{data.pricing}</span>
+          {data.status !== 'coming-soon' && (
+            <span class="meta-chip meta-chip--pricing">{data.pricing}</span>
+          )}
         </div>
 
         <div class="product-hero__cta">
@@ -96,7 +98,9 @@ const jsonLd = {
           )}
         </div>
 
-        {data.pricingNote && <p class="product-hero__note">{data.pricingNote}</p>}
+        {data.pricingNote && data.status !== 'coming-soon' && (
+          <p class="product-hero__note">{data.pricingNote}</p>
+        )}
       </div>
     </header>
 
@@ -347,15 +351,15 @@ const jsonLd = {
     margin: 2.5rem 0 1rem;
     color: var(--text);
     letter-spacing: -0.02em;
-    position: relative;
-    padding-left: 1rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6em;
   }
   .prose :global(h2)::before {
     content: '//';
-    position: absolute;
-    left: 0;
     color: var(--neon-cyan);
     font-weight: 400;
+    flex-shrink: 0;
   }
   .prose :global(h2:first-child) { margin-top: 0; }
   .prose :global(p) { color: var(--text-muted); line-height: 1.75; }

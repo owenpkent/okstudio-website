@@ -35,7 +35,11 @@ const statusLabel: Record<string, string> = {
   </div>
 
   <div class="product-card__footer">
-    <span class="product-card__pricing">{pricing}</span>
+    {status !== 'coming-soon' ? (
+      <span class="product-card__pricing">{pricing}</span>
+    ) : (
+      <span class="product-card__pricing product-card__pricing--soon">Coming soon</span>
+    )}
     <span class="product-card__cta">View →</span>
   </div>
 </a>
@@ -174,6 +178,7 @@ const statusLabel: Record<string, string> = {
     font-size: 0.85rem;
   }
   .product-card__pricing { color: var(--text); font-weight: 500; }
+  .product-card__pricing--soon { color: var(--neon-magenta); }
   .product-card__cta {
     color: var(--neon-cyan);
     text-transform: uppercase;
