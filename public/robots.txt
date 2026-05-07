@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://okstud.io/sitemap-index.xml

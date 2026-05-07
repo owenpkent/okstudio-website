@@ -1,0 +1,187 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  product: CollectionEntry<'products'>;
+  variant?: 'featured' | 'secondary';
+}
+
+const { product, variant = 'secondary' } = Astro.props;
+const { title, tagline, status, pricing, icon, category, tags } = product.data;
+const href = `/products/${product.id}/`;
+
+const statusLabel: Record<string, string> = {
+  live: 'LIVE',
+  'coming-soon': 'COMING SOON',
+  active: 'ACTIVE',
+  planning: 'IN DEV',
+};
+---
+
+<a href={href} class={`product-card product-card--${variant}`} data-status={status}>
+  <div class="product-card__head">
+    <span class="product-card__icon" aria-hidden="true">{icon}</span>
+    <span class={`product-card__status status--${status}`}>{statusLabel[status]}</span>
+  </div>
+
+  <h3 class="product-card__title">{title}</h3>
+  <p class="product-card__tagline">{tagline}</p>
+
+  <div class="product-card__tags" aria-label="Tags">
+    <span class="product-card__category">{category}</span>
+    {variant === 'featured' && tags.slice(0, 3).map((tag) => (
+      <span class="product-card__tag">{tag}</span>
+    ))}
+  </div>
+
+  <div class="product-card__footer">
+    <span class="product-card__pricing">{pricing}</span>
+    <span class="product-card__cta">View →</span>
+  </div>
+</a>
+
+<style>
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-cyber);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+  .product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-cyan);
+    box-shadow:
+      0 0 40px rgba(0, 240, 255, 0.15),
+      0 20px 60px rgba(0, 0, 0, 0.4);
+    color: var(--text);
+  }
+  .product-card:hover::before { transform: scaleX(1); }
+
+  .product-card--featured {
+    background: rgba(20, 20, 40, 0.85);
+    border-color: rgba(0, 240, 255, 0.3);
+  }
+
+  .product-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .product-card__icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    color: var(--neon-cyan);
+    transition: all var(--transition);
+  }
+  .product-card:hover .product-card__icon {
+    background: var(--neon-cyan);
+    box-shadow: 0 0 30px var(--accent-glow);
+  }
+
+  .product-card__status {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid currentColor;
+  }
+  .status--live { color: var(--neon-green); background: rgba(0, 255, 136, 0.08); }
+  .status--coming-soon { color: var(--neon-magenta); background: rgba(255, 0, 170, 0.08); }
+  .status--active { color: var(--neon-cyan); background: rgba(0, 240, 255, 0.08); }
+  .status--planning { color: var(--neon-yellow); background: rgba(240, 255, 0, 0.08); }
+
+  .product-card__title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .product-card--featured .product-card__title { font-size: 1.85rem; }
+
+  .product-card__tagline {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .product-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .product-card__category {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+    background: rgba(0, 240, 255, 0.08);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 3px;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .product-card__tag {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+    background: rgba(170, 0, 255, 0.08);
+    border: 1px solid rgba(170, 0, 255, 0.3);
+    border-radius: 3px;
+    color: var(--neon-purple);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .product-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+  }
+  .product-card__pricing { color: var(--text); font-weight: 500; }
+  .product-card__cta {
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: transform var(--transition);
+  }
+  .product-card:hover .product-card__cta {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 10px rgba(255, 0, 170, 0.5);
+  }
+</style>

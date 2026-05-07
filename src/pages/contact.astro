@@ -1,0 +1,274 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Contact, OK Studio"
+  description="Get in touch with OK Studio about accessibility software, custom builds, partnerships, or feedback on a product."
+>
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <p class="section-tag">// Contact</p>
+      <h1 class="page-title">Let's build something.</h1>
+      <p class="lede">
+        Working on an accessibility project? Need a custom tool built? Have
+        feedback on something I shipped? I'd love to hear about it.
+      </p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container content-grid">
+      <form
+        class="contact-form"
+        name="contact"
+        method="POST"
+        action="/thanks/"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="visually-hidden">
+          <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <div class="form-row">
+          <label for="name">Your name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            autocomplete="name"
+            placeholder="Owen Kent"
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Your email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="general">General question</option>
+            <option value="bug">Bug report</option>
+            <option value="feature">Feature request</option>
+            <option value="partnership">Partnership / collaboration</option>
+            <option value="custom">Custom build inquiry</option>
+            <option value="press">Press inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            placeholder="Tell me what's on your mind."
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </form>
+
+      <aside class="contact-side">
+        <h2>// Other ways to reach me</h2>
+        <ul class="links">
+          <li>
+            <strong>GitHub</strong>
+            <a href="https://github.com/okstudio1" target="_blank" rel="noopener noreferrer">
+              github.com/okstudio1
+            </a>
+            <p>For bug reports, feature requests, and code contributions.</p>
+          </li>
+          <li>
+            <strong>LinkedIn</strong>
+            <a href="https://www.linkedin.com/in/owenpkent/" target="_blank" rel="noopener noreferrer">
+              linkedin.com/in/owenpkent
+            </a>
+            <p>For partnerships, press, and professional inquiries.</p>
+          </li>
+        </ul>
+
+        <div class="response-note">
+          <p>
+            I read every message. Response time is typically within a few days.
+            I'm a one-person studio, so please be patient if it takes a moment.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page-hero {
+    padding: 140px 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 0, 170, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .page-hero__inner { position: relative; max-width: 720px; }
+  .section-tag {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--neon-magenta);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0 0 1rem;
+  }
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    margin: 0 0 1rem;
+    color: var(--text);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 0 20px var(--accent-glow));
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .content { padding: 4rem 0; }
+  .content-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) {
+    .content-grid { grid-template-columns: minmax(0, 1.4fr) 1fr; align-items: start; }
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .form-row label {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--neon-cyan);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all var(--transition);
+  }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--accent-glow);
+    outline: none;
+  }
+  .form-row textarea { resize: vertical; min-height: 120px; }
+
+  .contact-form .btn { align-self: flex-start; }
+
+  .contact-side h2 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+    color: var(--neon-magenta);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .links li strong {
+    display: block;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .links li a {
+    color: var(--neon-cyan);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .links li a:hover {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 10px rgba(255, 0, 170, 0.5);
+  }
+  .links li p {
+    color: var(--text-muted);
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .response-note {
+    padding: 1.25rem;
+    background: rgba(0, 240, 255, 0.05);
+    border-left: 3px solid var(--neon-cyan);
+    border-radius: var(--radius);
+  }
+  .response-note p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+</style>

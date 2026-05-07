@@ -1,0 +1,153 @@
+---
+import { siteConfig } from '../config/site';
+
+interface Props {
+  variant?: 'strip' | 'card';
+  heading?: string;
+  body?: string;
+  buttonLabel?: string;
+}
+
+const {
+  variant = 'strip',
+  heading = 'Stay in the loop.',
+  body = 'Weekly: what shipped, what\'s next, what I\'m learning. No spam.',
+  buttonLabel = 'Subscribe',
+} = Astro.props;
+
+const action = `https://buttondown.com/api/emails/embed-subscribe/${siteConfig.buttondownUsername}`;
+---
+
+<section class={`newsletter newsletter--${variant}`} aria-label="Newsletter signup">
+  <div class={variant === 'strip' ? 'container newsletter__inner' : 'newsletter__inner'}>
+    <div class="newsletter__copy">
+      <p class="newsletter__tag">// Newsletter</p>
+      <h3 class="newsletter__heading">{heading}</h3>
+      <p class="newsletter__body">{body}</p>
+    </div>
+
+    <form
+      class="newsletter__form"
+      action={action}
+      method="post"
+      target="popupwindow"
+      onsubmit="window.open('https://buttondown.com/okstudio', 'popupwindow'); window.dispatchEvent(new CustomEvent('track:newsletter_signup'));"
+      data-track="newsletter_signup"
+    >
+      <label for={`newsletter-email-${variant}`} class="visually-hidden">Email address</label>
+      <input
+        type="email"
+        id={`newsletter-email-${variant}`}
+        name="email"
+        placeholder="you@example.com"
+        required
+        autocomplete="email"
+      />
+      <button type="submit" class="btn btn-primary">{buttonLabel}</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .newsletter {
+    padding: 4rem 0;
+    position: relative;
+  }
+  .newsletter--strip {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .newsletter--strip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-cyber);
+  }
+  .newsletter--strip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+  .newsletter--card {
+    padding: 1.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+  }
+
+  .newsletter__inner {
+    display: grid;
+    gap: 1.5rem;
+    align-items: center;
+    position: relative;
+  }
+  .newsletter--strip .newsletter__inner { grid-template-columns: 1fr; }
+  @media (min-width: 800px) {
+    .newsletter--strip .newsletter__inner {
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+    }
+  }
+
+  .newsletter__tag {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    color: var(--neon-magenta);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin: 0 0 0.5rem;
+  }
+  .newsletter__heading {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0 0 0.5rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .newsletter--card .newsletter__heading { font-size: 1.25rem; }
+  .newsletter__body {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .newsletter__form {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .newsletter__form input {
+    flex: 1;
+    min-width: 220px;
+    padding: 0.95rem 1.1rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all var(--transition);
+  }
+  .newsletter__form input:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px var(--accent-glow);
+    outline: none;
+  }
+  .newsletter--card .newsletter__form { flex-direction: column; }
+  .newsletter--card .newsletter__form input { width: 100%; }
+  .newsletter--card .newsletter__form .btn { width: 100%; justify-content: center; }
+</style>

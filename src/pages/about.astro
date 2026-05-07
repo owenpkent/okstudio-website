@@ -1,0 +1,246 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="About, OK Studio"
+  description="OK Studio is built by Owen Kent, a wheelchair user with muscular dystrophy making accessibility-first software the disability community actually needs."
+>
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <p class="section-tag">// About</p>
+      <h1 class="page-title">Built by someone<br />who needs them.</h1>
+      <p class="lede">
+        OK Studio is a software studio focused on accessibility, adaptive input,
+        and human-computer interaction. Every product solves a real problem the
+        builder faces, or one faced by the broader disability community.
+      </p>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container content-grid">
+      <div class="content-main">
+        <div class="prose">
+          <h2>Who I am</h2>
+          <p>
+            I'm Owen Kent, a wheelchair user with muscular dystrophy and the
+            builder behind OK Studio. I'm an FAA-certified Remote Pilot and a
+            licensed ham radio operator working at the intersection of
+            accessibility, engineering, and human-computer interaction.
+          </p>
+          <p>
+            I build accessibility-first software because I use it every day.
+            Typing is hard. Holding a controller is hard. The tools I make are
+            the ones I wish existed when I needed them.
+          </p>
+
+          <h2>What I believe</h2>
+          <p>
+            <strong>Accessibility is innovation.</strong> The best interfaces
+            aren't dumbed down, they're smarter. Designing for disability
+            pushes us to create solutions that work better for everyone.
+          </p>
+          <p>
+            <strong>Open source by default.</strong> Core tools are MIT
+            licensed. Accessibility shouldn't be locked behind paywalls.
+          </p>
+          <p>
+            <strong>Nothing about us without us.</strong> I build with the
+            disability community, not for them. Lived experience guides every
+            decision.
+          </p>
+          <p>
+            <strong>Software should just work.</strong> No complicated setup,
+            no accessibility "modes" buried in settings. Tools should work for
+            everyone out of the box.
+          </p>
+
+          <h2>What I build</h2>
+          <p>
+            Three products in flight, all on the <a href="/#projects">projects page</a>:
+          </p>
+          <ul>
+            <li><strong>Alpha-OSK</strong>: AI-powered on-screen keyboard for Windows and Linux. Shipping.</li>
+            <li><strong>MacroVox</strong>: voice dictation for Windows. Coming soon.</li>
+            <li><strong>Project Nimbus</strong>: mouse-to-virtual-joystick controller for adaptive gaming. Coming soon.</li>
+          </ul>
+
+          <h2>Get involved</h2>
+          <p>
+            The fastest way to support the studio is to use the tools and tell
+            me what's broken. Code contributions, bug reports, and feature ideas
+            all welcome on GitHub. Or just <a href="/contact/">say hi</a>.
+          </p>
+        </div>
+      </div>
+
+      <aside class="content-side">
+        <div class="profile-card">
+          <img src="/owen.jpg" alt="Owen Kent" class="profile-image" width="240" height="240" />
+          <p class="profile-name">Owen Kent</p>
+          <p class="profile-role">// Founder, OK Studio</p>
+          <div class="profile-links">
+            <a href="https://github.com/owenpkent" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/owenpkent/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .page-hero {
+    padding: 140px 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .page-hero__inner { position: relative; max-width: 720px; }
+
+  .section-tag {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--neon-magenta);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0 0 1rem;
+  }
+  .page-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    margin: 0 0 1.5rem;
+    color: var(--text);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 0 20px var(--accent-glow));
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .content { padding: 4rem 0; }
+  .content-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 900px) {
+    .content-grid { grid-template-columns: minmax(0, 2fr) 1fr; align-items: start; }
+  }
+
+  .prose h2 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    position: relative;
+    padding-left: 1rem;
+  }
+  .prose h2::before {
+    content: '//';
+    position: absolute;
+    left: 0;
+    color: var(--neon-cyan);
+    font-weight: 400;
+  }
+  .prose h2:first-child { margin-top: 0; }
+  .prose p { color: var(--text-muted); line-height: 1.75; }
+  .prose ul {
+    color: var(--text-muted);
+    line-height: 1.75;
+    padding-left: 1.25rem;
+    list-style: none;
+  }
+  .prose li {
+    margin-bottom: 0.6rem;
+    position: relative;
+    padding-left: 1.25rem;
+  }
+  .prose li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--neon-cyan);
+  }
+  .prose strong { color: var(--text); }
+  .prose a { color: var(--neon-cyan); }
+  .prose a:hover {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 10px rgba(255, 0, 170, 0.5);
+  }
+
+  .profile-card {
+    padding: 1.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    position: sticky;
+    top: 100px;
+    backdrop-filter: blur(10px);
+  }
+  .profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    display: block;
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 30px var(--accent-glow);
+  }
+  .profile-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    margin: 0;
+    color: var(--text);
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+  }
+  .profile-role {
+    margin: 0.25rem 0 1rem;
+    color: var(--neon-cyan);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .profile-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .profile-links a {
+    color: var(--neon-cyan);
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+  .profile-links a:hover {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 10px rgba(255, 0, 170, 0.5);
+  }
+</style>

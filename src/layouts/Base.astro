@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { siteConfig } from '../config/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description = 'OK Studio builds accessibility-first software. Tools for adaptive gaming, voice control, on-screen typing, and alternative input.',
+  ogImage = '/og-default.png',
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageUrl = new URL(ogImage, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="OK Studio" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
+
+    {siteConfig.plausibleEnabled && (
+      <script
+        defer
+        data-domain={siteConfig.plausibleDomain}
+        src="https://plausible.io/js/script.outbound-links.tagged-events.js"
+      />
+    )}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Nav />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      // Lightweight goal-event dispatcher.
+      // Plausible (when enabled) will pick up data-track via tagged-events script.
+      // We also fire a CustomEvent for any future client-side analytics.
+      document.querySelectorAll('[data-track]').forEach((el) => {
+        el.addEventListener('click', () => {
+          const goal = el.getAttribute('data-track');
+          const product = el.getAttribute('data-product') ?? undefined;
+          if (!goal) return;
+          window.dispatchEvent(
+            new CustomEvent('track', { detail: { goal, product } })
+          );
+          // Plausible global if loaded
+          // @ts-expect-error plausible is injected at runtime
+          if (typeof window.plausible === 'function') {
+            // @ts-expect-error
+            window.plausible(goal, { props: product ? { product } : {} });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

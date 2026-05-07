@@ -1,0 +1,313 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import NewsletterInline from '../components/NewsletterInline.astro';
+
+const products = await getCollection('products');
+const sorted = products.sort((a, b) => a.data.order - b.data.order);
+
+const heroProduct = sorted.find((p) => p.data.status === 'live') ?? sorted[0];
+const heroProductUrl = heroProduct ? `/products/${heroProduct.id}/` : '#projects';
+const heroProductLabel = heroProduct ? `Try ${heroProduct.data.title}` : 'View Projects';
+---
+
+<Base
+  title="OK Studio, Tools for Accessibility"
+  description="OK Studio builds accessibility-first software. Tools for adaptive gaming, voice control, on-screen typing, and alternative input."
+>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="tagline">Tools for Accessibility</p>
+        <h1 class="hero-title">
+          <span class="brand">OK Studio</span>
+          <span class="subtitle">Software that expands what's possible</span>
+        </h1>
+        <p class="hero-description">
+          I build accessibility-first tools for adaptive gaming, voice control,
+          on-screen typing, and alternative input, software that makes
+          computers work better for everyone.
+        </p>
+        <div class="hero-buttons">
+          <a href={heroProductUrl} class="btn btn-primary">{heroProductLabel}</a>
+          <a href="#projects" class="btn btn-secondary">See projects</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <header class="section-header">
+        <p class="section-tag">// Featured Work</p>
+        <h2 id="projects-title" class="section-title">Projects</h2>
+        <p class="section-sub">
+          One shipped, two on the way. Accessibility-first software for typing,
+          voice, and adaptive gaming.
+        </p>
+      </header>
+
+      <div class="grid grid--featured">
+        {sorted.map((product) => (
+          <ProductCard product={product} variant="featured" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <NewsletterInline variant="strip" />
+
+  <section id="about" class="about" aria-labelledby="about-title">
+    <div class="container about-inner">
+      <div class="about-image-container">
+        <img src="/owen.jpg" alt="Owen Kent" class="about-image" width="320" height="320" />
+      </div>
+      <div class="about-text">
+        <p class="section-tag">// About</p>
+        <h2 id="about-title" class="section-title">Built by someone who needs them.</h2>
+        <p>
+          I'm Owen Kent, a wheelchair user with muscular dystrophy and the
+          builder behind OK Studio. I make accessibility-first tools because
+          I use them every day.
+        </p>
+        <p>
+          The studio works at the intersection of accessibility, engineering,
+          and human-computer interaction: adaptive input systems, voice-driven
+          automation, and accessible interfaces for gaming and creative
+          software. Good tools should be fast, usable, and genuinely empowering.
+        </p>
+        <a href="/about/" class="about-link">More about OK Studio →</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, transparent 70%);
+    filter: blur(60px);
+    animation: float-slow 20s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 0, 170, 0.12) 0%, transparent 70%);
+    filter: blur(60px);
+    animation: float-slow 25s ease-in-out infinite reverse;
+    pointer-events: none;
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -30px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero::before, .hero::after { animation: none; }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tagline {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .tagline::before,
+  .tagline::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gradient-cyber);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+  }
+  .hero-title .brand {
+    display: block;
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 0 30px var(--accent-glow));
+  }
+  .hero-title .subtitle {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.4em;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Projects */
+  .projects { padding: 100px 0 60px; position: relative; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .section-tag {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--neon-magenta);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0 0 1rem;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .section-sub {
+    color: var(--text-muted);
+    margin: 0.75rem auto 0;
+    max-width: 560px;
+  }
+
+  .tier-heading {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0 0 1.5rem;
+    font-weight: 500;
+  }
+  .tier-heading--more { margin-top: 4rem; }
+
+  .grid {
+    display: grid;
+    gap: 2rem;
+  }
+  .grid--featured {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  }
+  .grid--secondary {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+
+  /* About */
+  .about {
+    padding: 100px 0;
+    background: var(--bg-secondary);
+    position: relative;
+  }
+  .about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-cyber);
+  }
+  .about-inner {
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  @media (min-width: 800px) {
+    .about-inner { grid-template-columns: 300px 1fr; }
+  }
+  .about-image-container {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
+    margin: 0 auto;
+    width: min(100%, 300px);
+  }
+  .about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .about-text .section-title {
+    text-align: left;
+    margin: 0 0 1.5rem;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+  .about-text p {
+    color: var(--text-muted);
+    line-height: 1.75;
+  }
+  .about-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--neon-cyan);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+  .about-link:hover {
+    color: var(--neon-magenta);
+    text-shadow: 0 0 10px rgba(255, 0, 170, 0.5);
+  }
+</style>
