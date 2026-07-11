@@ -1,18 +1,26 @@
-# OKStudio - Boutique Software Studio Website
+# OKStudio Website
 
-A modern, responsive portfolio website for OKStudio, a boutique software development firm focused on assistive technology, accessibility, gaming, and human-computer interaction.
+A responsive, single-page portfolio site for OKStudio, a disability-led software studio building open-source, accessibility-first tools by and for people with disabilities. Founded by Owen Kent, a wheelchair user and disabled software engineer.
+
+The site is built to be accessible itself: screen-reader-first, keyboard-only, WCAG 2.2 AA target, with reduced-motion and high-contrast support.
 
 GitHub: https://github.com/owenpkent
 
 ## Focus Areas
 
-- Assistive technology software
-- Accessibility-first product design
+- Accessibility-first software, by and for people with disabilities
 - Adaptive gaming and alternative input systems
 - Voice, MIDI, and automation tooling
 - Human-computer interaction (HCI)
+- Open source
 
 ## Featured Work
+
+### Coverage Compass
+
+A free, open-source, browser-only tool that helps disabled Coloradans keep their Medicaid under Colorado's 2027 work-reporting rules. Reads and explains Medicaid letters on your device (live demo), with document form-filling in preview. English and Spanish, built to WCAG 2.2 AA, in partnership with the Colorado Cross-Disability Coalition (CCDC).
+
+Live demo: https://coverage-compass-6ky.pages.dev
 
 ### Project Nimbus
 
@@ -53,11 +61,11 @@ Then visit http://localhost:8000
 ## File Structure
 
 ```
-Drone website/
+okstudio-website/
 ├── index.html
-├── services.html
 ├── styles.css
 ├── script.js
+├── images/
 └── README.md
 ```
 

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OK Studio — Tools for Accessibility</title>
-    <meta name="description" content="OK Studio builds accessibility-first software. Tools for adaptive gaming, voice control, and alternative input systems.">
-    <meta property="og:title" content="OK Studio — Tools for Accessibility">
-    <meta property="og:description" content="Building accessibility-first software for adaptive gaming, voice control, and alternative input systems.">
+    <title>OKStudio: Accessibility-first software, by and for people with disabilities</title>
+    <meta name="description" content="OKStudio is a disability-led software studio building open-source, accessibility-first tools. Founded by Owen Kent, a wheelchair user and disabled software engineer. Screen-reader-first, keyboard-only, WCAG 2.2 AA, privacy by design.">
+    <meta property="og:title" content="OKStudio: Accessibility-first software, by and for people with disabilities">
+    <meta property="og:description" content="A disability-led studio shipping open-source, accessible tools the community can use, inspect, and improve. Coverage Compass, Project Nimbus, Octavium, MacroVox, and more.">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="images/okstudio favicon drone 1.png">
     <link rel="stylesheet" href="styles.css">
@@ -14,16 +14,17 @@
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary">
         <div class="nav-container">
             <a href="index.html" class="nav-brand">
                 <img src="images/okstudio favicon drone 1.png" alt="" class="nav-favicon">
-                <span>OK Studio</span>
+                <span>OKStudio</span>
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#work" class="nav-link">Work</a></li>
+                <li><a href="#approach" class="nav-link">Approach</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -37,97 +38,170 @@
 
     <main id="main">
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" aria-labelledby="hero-title">
             <div class="hero-content">
-                <p class="tagline">Tools for Accessibility</p>
-                <h1 class="hero-title">
-                    <span class="brand">OK Studio</span>
-                    <span class="subtitle">Building software that expands what's possible</span>
+                <p class="tagline">Disability-led software studio</p>
+                <h1 id="hero-title" class="hero-title">
+                    <span class="brand">OKStudio</span>
+                    <span class="subtitle">Accessibility-first tools, by and for people with disabilities</span>
                 </h1>
                 <p class="hero-description">
-                    I create accessibility-first tools for adaptive gaming, voice control, and alternative input—software that makes computers work better for everyone.
+                    I build open-source software with the disability community, not just for it. Every tool is screen-reader-first, keyboard-only, and built to WCAG 2.2 AA, so the people who rely on it can use it, inspect it, and improve it.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#work" class="btn btn-primary">See the work</a>
+                    <a href="#contact" class="btn btn-secondary">Get in touch</a>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects" aria-labelledby="projects-title">
+        <!-- Approach / Principles Section -->
+        <section id="approach" class="approach" aria-labelledby="approach-title">
             <div class="container">
                 <div class="section-header">
-                    <p class="section-tag">Featured Work</p>
-                    <h2 id="projects-title" class="section-title">Projects</h2>
+                    <p class="section-tag">How I build</p>
+                    <h2 id="approach-title" class="section-title">Principles</h2>
                 </div>
-                
+
+                <div class="principles-grid">
+                    <article class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fa-solid fa-users" aria-hidden="true"></i>
+                        </div>
+                        <h3>By and for</h3>
+                        <p>OKStudio is disability-led. It is founded and run by a disabled engineer, and the tools are shaped by the people who depend on them.</p>
+                    </article>
+
+                    <article class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fa-solid fa-hands-holding-circle" aria-hidden="true"></i>
+                        </div>
+                        <h3>Nothing about us without us</h3>
+                        <p>I build with disabled people from the start. Lived experience shapes what gets made and how; it is never an afterthought at the end.</p>
+                    </article>
+
+                    <article class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+                        </div>
+                        <h3>Open source</h3>
+                        <p>The software is open for the community to use, inspect, fork, and improve. No black boxes around tools people rely on.</p>
+                    </article>
+
+                    <article class="principle-card">
+                        <div class="principle-icon">
+                            <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
+                        </div>
+                        <h3>Accessible and private by design</h3>
+                        <p>Screen-reader-first, keyboard-only, and built to WCAG 2.2 AA, with your data kept on your device wherever it can be.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work / Projects Section -->
+        <section id="work" class="projects" aria-labelledby="work-title">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-tag">Featured work</p>
+                    <h2 id="work-title" class="section-title">Work</h2>
+                </div>
+
+                <!-- Flagship: Coverage Compass -->
+                <article class="project-card project-card--featured">
+                    <div class="project-icon">
+                        <i class="fa-solid fa-compass" aria-hidden="true"></i>
+                    </div>
+                    <div class="project-featured-body">
+                        <p class="project-flag">Flagship</p>
+                        <h3>Coverage Compass</h3>
+                        <p>A free, open-source tool that helps disabled Coloradans keep their Medicaid under Colorado's 2027 work-reporting rules. It reads and explains your Medicaid letters right on your device (live demo), with document form-filling in preview. Everything runs in your browser: no server, no account, and your documents never leave your device. Available in English and Spanish, built to WCAG 2.2 AA, in partnership with the Colorado Cross-Disability Coalition.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Medicaid</span>
+                            <span class="project-tag">Colorado</span>
+                            <span class="project-tag">Browser-only</span>
+                            <span class="project-tag">English &amp; Spanish</span>
+                            <span class="project-tag">WCAG 2.2 AA</span>
+                            <span class="project-tag">Open source</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://coverage-compass-6ky.pages.dev" target="_blank" rel="noopener noreferrer" class="project-link">
+                                Try the live demo <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
                 <div class="projects-grid">
                     <!-- Project Nimbus -->
                     <article class="project-card">
                         <div class="project-icon">
-                            <i class="fas fa-gamepad" aria-hidden="true"></i>
+                            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
                         </div>
                         <h3>Project Nimbus</h3>
-                        <p>Accessibility-focused virtual controller that turns mouse input into virtual joystick commands. Designed for adaptive gaming and alternative control schemes.</p>
+                        <p>An accessibility-focused virtual controller that turns mouse input into virtual joystick commands (vJoy), opening up adaptive gaming and alternative control for people who cannot use a standard gamepad.</p>
                         <div class="project-tags">
-                            <span class="project-tag">Accessibility</span>
-                            <span class="project-tag">Gaming</span>
+                            <span class="project-tag">Adaptive gaming</span>
+                            <span class="project-tag">Alternative input</span>
                             <span class="project-tag">Python</span>
+                            <span class="project-tag">Open source</span>
                         </div>
                         <a href="https://github.com/owenpkent/Project-Nimbus" target="_blank" rel="noopener noreferrer" class="project-link">
-                            View on GitHub <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </article>
 
                     <!-- Octavium -->
                     <article class="project-card">
                         <div class="project-icon">
-                            <i class="fas fa-music" aria-hidden="true"></i>
+                            <i class="fa-solid fa-music" aria-hidden="true"></i>
                         </div>
                         <h3>Octavium</h3>
-                        <p>An accessibility-first, mouse-driven virtual MIDI keyboard for making music without a physical keyboard. Play notes, chords, and melodies with just a mouse.</p>
+                        <p>An accessibility-first, mouse-driven virtual MIDI keyboard for making music without a physical keyboard. Play notes, chords, and melodies using only a mouse.</p>
                         <div class="project-tags">
-                            <span class="project-tag">Accessibility</span>
                             <span class="project-tag">Music</span>
                             <span class="project-tag">MIDI</span>
+                            <span class="project-tag">Alternative input</span>
+                            <span class="project-tag">Open source</span>
                         </div>
                         <a href="https://github.com/owenpkent/Octavium" target="_blank" rel="noopener noreferrer" class="project-link">
-                            View on GitHub <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </article>
 
                     <!-- MacroVox -->
                     <article class="project-card">
                         <div class="project-icon">
-                            <i class="fas fa-microphone" aria-hidden="true"></i>
+                            <i class="fa-solid fa-microphone" aria-hidden="true"></i>
                         </div>
                         <h3>MacroVox</h3>
-                        <p>Voice-controlled macro executor for Windows. Speak commands and execute keystrokes via AutoHotkey. Hands-free automation for those who need it.</p>
+                        <p>A voice-controlled macro executor for Windows. Speak a command and it runs your keystrokes through AutoHotkey, giving hands-free automation to people who need it.</p>
                         <div class="project-tags">
-                            <span class="project-tag">Voice Control</span>
+                            <span class="project-tag">Voice control</span>
                             <span class="project-tag">Automation</span>
                             <span class="project-tag">Windows</span>
+                            <span class="project-tag">Open source</span>
                         </div>
                         <a href="https://github.com/owenpkent/MacroVox" target="_blank" rel="noopener noreferrer" class="project-link">
-                            View on GitHub <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </article>
 
-                    <!-- Adaptive Clothing -->
+                    <!-- Adaptive Wheelchair Vest -->
                     <article class="project-card">
                         <div class="project-icon">
-                            <i class="fas fa-vest" aria-hidden="true"></i>
+                            <i class="fa-solid fa-vest" aria-hidden="true"></i>
                         </div>
                         <h3>Adaptive Wheelchair Vest</h3>
-                        <p>Open-source pattern for a synthetic down puffer vest designed for wheelchair users. Optimized for seated posture, pressure-point avoidance, and easy on/off with limited dexterity.</p>
+                        <p>An open-source sewing pattern for a synthetic down puffer vest designed for wheelchair users. Cut for seated posture, it avoids pressure points and goes on and off easily with limited dexterity.</p>
                         <div class="project-tags">
-                            <span class="project-tag">Adaptive Clothing</span>
-                            <span class="project-tag">Open Source</span>
-                            <span class="project-tag">Design</span>
+                            <span class="project-tag">Adaptive clothing</span>
+                            <span class="project-tag">Wheelchair users</span>
+                            <span class="project-tag">Open source</span>
+                            <span class="project-tag">Pattern</span>
                         </div>
                         <a href="https://github.com/owenpkent/adaptive-clothing" target="_blank" rel="noopener noreferrer" class="project-link">
-                            View on GitHub <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            View on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </article>
                 </div>
@@ -144,17 +218,20 @@
                     <div class="about-text">
                         <h2 id="about-title">About</h2>
                         <p>
-                            I'm Owen Kent, the builder behind OK Studio. I'm an FAA-certified Remote Pilot and licensed ham radio operator working at the intersection of accessibility, engineering, and human-computer interaction.
+                            I'm Owen Kent, a wheelchair user and disabled software engineer, and I run OKStudio, a disability-led software studio. I build accessibility-first tools by and for people with disabilities.
                         </p>
                         <p>
-                            My focus is on assistive technology: adaptive input systems, voice-driven automation, and accessible interfaces for gaming and creative software. I believe good tools should be fast, usable, and genuinely empowering.
+                            My work follows one rule: nothing about us without us. I build with disabled people from the first idea to the shipped release, so the tools reflect how we actually live and work, not how someone assumes we do. Everything is open source, screen-reader-first, keyboard-only, and built to WCAG 2.2 AA, with privacy handled by keeping your data on your device wherever possible.
+                        </p>
+                        <p>
+                            Outside the studio I'm also an FAA-certified Remote Pilot and a licensed ham radio operator, a couple of maker credentials that keep me curious about how hardware, software, and people connect.
                         </p>
                         <div class="social-links">
                             <a href="https://github.com/owenpkent" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-                                <i class="fab fa-github" aria-hidden="true"></i>
+                                <i class="fa-brands fa-github" aria-hidden="true"></i>
                             </a>
                             <a href="https://www.linkedin.com/in/owenpkent/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -166,28 +243,32 @@
         <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="container">
                 <div class="contact-content">
-                    <h2 id="contact-title">Let's Build Something</h2>
+                    <h2 id="contact-title">Let's build accessible software together</h2>
                     <p>
-                        Working on an accessibility project? Need a custom tool built? I'd love to hear about it.
+                        Working on an accessibility project, a community tool, or a partnership? Whether you're a disability organization, a fellow builder, or someone who hit a wall with software that wasn't made for you, I'd like to hear about it.
                     </p>
-                    <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
                         <input type="hidden" name="form-name" value="contact">
-                        <div class="form-group" style="display: none;">
-                            <input name="bot-field">
+                        <p class="hidden-field" hidden>
+                            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                        </p>
+                        <div class="form-group">
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name" required aria-required="true" autocomplete="name" aria-describedby="name-error">
+                            <span class="field-error" id="name-error" hidden></span>
                         </div>
                         <div class="form-group">
-                            <label for="name" class="visually-hidden">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name">
+                            <label for="email">Your email</label>
+                            <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" aria-describedby="email-error">
+                            <span class="field-error" id="email-error" hidden></span>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="visually-hidden">Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email">
+                            <label for="message">Your message</label>
+                            <textarea id="message" name="message" rows="5" required aria-required="true" aria-describedby="message-error"></textarea>
+                            <span class="field-error" id="message-error" hidden></span>
                         </div>
-                        <div class="form-group">
-                            <label for="message" class="visually-hidden">Your Message</label>
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary">Send message</button>
+                        <p class="form-status" id="form-status" role="alert"></p>
                     </form>
                 </div>
             </div>
@@ -198,13 +279,13 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-brand">OK Studio</p>
-                <p class="footer-tagline">Tools for Accessibility</p>
+                <p class="footer-brand">OKStudio</p>
+                <p class="footer-tagline">Accessibility-first software, by and for people with disabilities.</p>
                 <div class="footer-links">
                     <a href="https://github.com/owenpkent" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
                     <a href="https://www.linkedin.com/in/owenpkent/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
                 </div>
-                <p class="footer-copyright">&copy; <span id="year"></span> OKStudio Inc. All rights reserved.</p>
+                <p class="footer-copyright">&copy; <span id="year"></span> OKStudio, Inc. All rights reserved.</p>
             </div>
         </div>
     </footer>
