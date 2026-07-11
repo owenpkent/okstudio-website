@@ -2,6 +2,7 @@
 
 ## Pivot: Brand & Messaging
 
+- [x] Replace placeholder favicon / nav badge with the real OKStudio logo (Jazz Teal disc mark; SVG + `favicon.ico` + apple-touch + web manifest)
 - [ ] Rename site copy from drone services to boutique software/assistive tech studio
 - [ ] Update hero headline + subheadline to match the new positioning
 - [ ] Update services content to focus on:
@@ -20,7 +21,7 @@
 
 - [ ] Decide final nav items (e.g., Home, Work, Services, About, Contact)
 - [ ] Ensure header layout matches desktop and mobile ordering
-- [ ] Make OKStudio logo link back to `index.html`
+- [x] Make OKStudio logo link back to `index.html`
 
 ## Content Pages
 
@@ -40,4 +41,4 @@
 
 - [ ] Verify GitHub Pages / Netlify deployment still works after content updates
 - [ ] Confirm relative paths work from a static host
-- [ ] Add basic metadata updates (title/description/Open Graph) for the new brand
+- [x] Add basic metadata updates (title/description/Open Graph, favicon, theme-color) for the new brand

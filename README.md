@@ -65,9 +65,17 @@ okstudio-website/
 ├── index.html
 ├── styles.css
 ├── script.js
+├── site.webmanifest        # PWA manifest + icons
 ├── images/
+│   ├── okstudio-icon.svg    # logo mark (favicon + nav)
+│   ├── favicon.ico          # multi-size favicon
+│   ├── apple-touch-icon.png
+│   └── okstudio-icon-*.png  # app-icon sizes
 └── README.md
 ```
+
+Brand assets (full logo set, guidelines) live in the private `OKStudio-Company-Info` repo
+under `branding/`.
 
 ## Deployment
 
